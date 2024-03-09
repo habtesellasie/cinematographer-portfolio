@@ -1,0 +1,183 @@
+@import "https://fonts.googleapis.com/css2?family=Foldit:wght@400;700&display=swap";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-black: rgb(13, 14, 16);
+  --bg-white: rgb(241, 241, 241);
+  --clr-primary: rgb(5, 26, 48);
+  --clr-secondary: rgba(210, 194, 159);
+  --clr-light-blue: rgb(87, 155, 177);
+  --clr-dark-blue: rgb(94, 201, 237);
+  --clr-welldone: rgb(77, 150, 235);
+  --clr-gray: rgb(161, 161, 161);
+  --clr-warning: rgb(191, 66, 66);
+  --clr-red: rgb(168, 11, 68, 0.8);
+  --clr-success: rgb(6, 115, 6);
+  --font-paragraph: "PT Sans", sans-serif;
+  --font-header: "PT Sans", sans-serif;
+  --font-main: "Foldit", cursive;
+  --sz-header: 3rem;
+  --sz-paragraph: 1.1rem;
+  --sz-paragraph-big: 2.2rem;
+  --sz-normal: 20px;
+  --padding-main: 16px;
+  --background: var(--bg-white);
+  --foreground: var(--clr-primary);
+}
+
+.darkmode {
+  --background: var(--bg-black);
+  --foreground: var(--bg-white);
+  overflow-x: hidden;
+}
+*::-moz-selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+*::selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-paragraph);
+  transition: 0.1s ease;
+}
+html::-webkit-scrollbar {
+  width: clamp(0.4rem, 1vw + 2rem, 0.8rem);
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+  z-index: 9998;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: var(--clr-light-blue);
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  -webkit-transition: all 0.2s ease-in-out;
+  border-radius: 100vw;
+  border: solid 2px #d3d3d3;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #437c8f;
+}
+html::-webkit-scrollbar-track {
+  background-color: #d3d3d3;
+  margin-block: -0.5rem;
+}
+.title-header {
+  border-radius: 50%;
+}
+#nav {
+  height: auto;
+  margin-bottom: 60px;
+  z-index: 99 !important;
+  position: relative;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 5px;
+  padding: var(--padding-main);
+  font-family: var(--font-paragraph);
+  position: fixed;
+  width: 100%;
+  max-width: 1750px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: solid var(--clr-light-blue) 2px;
+  background-color: var(--background);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 22px;
+  font-size: clamp(22px, 1.1vw + 1rem, 22px);
+  color: #a1a1a1;
+  color: var(--foreground);
+  transition: 0.2s ease;
+}
+.logo:hover {
+  color: var(--clr-light-blue);
+}
+.list-item a,
+.nav-list a {
+  text-decoration: none;
+}
+.hide-unhide {
+  display: flex;
+  -moz-column-gap: 5px;
+  column-gap: 5px;
+  row-gap: 10px;
+  transition: all 0.2s linear;
+}
+.list-item a {
+  padding: 4px 12px;
+  transition: all 0.3s ease-in-out;
+  color: var(--foreground);
+  font-weight: bolder;
+  font-size: clamp(16px, 0.6vw + 1rem, 18px);
+}
+.list-item a:hover {
+  color: var(--clr-light-blue);
+}
+.icon {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #a1a1a1;
+  color: var(--foreground);
+  margin-left: auto;
+  z-index: 98;
+  position: absolute;
+  right: 1rem;
+  top: 0.49rem;
+  padding: 4px 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.list-item__last {
+  border-left: solid 2px var(--foreground);
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.bi {
+  width: 25px;
+  fill: var(--foreground);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.bi-moon-stars-fill {
+  display: flex;
+}
+.bi-sun {
+  display: none;
+}
+.bi:hover {
+  fill: var(--clr-light-blue);
+}
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
